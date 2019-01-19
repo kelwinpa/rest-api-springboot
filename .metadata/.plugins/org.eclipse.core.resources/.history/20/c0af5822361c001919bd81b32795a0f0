@@ -1,0 +1,6 @@
+package com.api.apirest.modelo;
+
+
+public class Usuario {
+
+}

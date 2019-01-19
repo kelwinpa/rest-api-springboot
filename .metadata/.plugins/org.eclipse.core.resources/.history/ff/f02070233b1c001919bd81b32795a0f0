@@ -1,0 +1,13 @@
+package com.api.apirest.servicios;
+
+import org.springframework.stereotype.Service;
+
+import com.api.apirest.interfaces.UsuarioInterfaz;
+
+@Service
+public class UsurioServicio implements UsuarioInterfaz{
+
+	
+	
+	
+}

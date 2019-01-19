@@ -1,0 +1,80 @@
+package com.api.apirest.servicios;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.apirest.interfaces.UsuarioInterfaz;
+import com.api.apirest.modelo.Usuario;
+import com.api.apirest.repositorios.UsuarioRepository;
+
+@Service
+public class UsurioServicio implements UsuarioInterfaz {
+
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	@Override
+	public Usuario crearUsuario(String nombre, String apellido, Boolean sexo) {
+
+		Usuario usuario = new Usuario(nombre, apellido, sexo);
+
+		usuarioRepository.save(usuario);
+
+		return usuario;
+	}
+
+	@Override
+	public String crearUsuario2(Usuario usuario) {
+
+		StringBuilder result = new StringBuilder();
+		
+		String paula = "";
+		
+		paula = paula + "te quiero";
+		
+		paula = paula + "paula";
+				
+		
+		usuarioRepository.save(usuario);
+
+		if (usuario.getId() != null) {
+			return "Usuario Creado";
+		} else {
+			return "Usuario No creado";
+		}
+
+	}
+
+	@Override
+	public String updateUsuario(Long id, String nombre, String apellido, Boolean sexo) {
+
+		usuarioRepository.save(new Usuario(id, nombre, apellido, sexo));
+
+		return "usuario creador";
+	}
+
+	@Override
+	public String delateUsuario(Long id) {
+
+		usuarioRepository.deleteById(id);
+
+		return "usuario eliminado";
+	}
+
+	@Override
+	public Usuario getUsuarioPorNombre(String nombre) {
+
+		return usuarioRepository.findByNombre(nombre);
+
+	}
+
+	@Override
+	public List<Usuario> getUsuarios(String nombre) {
+		// TODO Auto-generated method stub
+
+		return null;
+	}
+
+}

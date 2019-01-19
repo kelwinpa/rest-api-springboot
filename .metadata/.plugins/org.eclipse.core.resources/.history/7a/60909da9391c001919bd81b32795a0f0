@@ -1,0 +1,19 @@
+package com.api.apirest.interfaces;
+
+import com.api.apirest.modelo.Usuario;
+
+public interface UsuarioInterfaz {
+	
+	
+	public void crearUsuario(String nombre, String apellido, Boolean sexo);
+	public void crearUsuario2(Usuario usuario);
+	
+	public void updateUsuario(String nombre, String apellido, Boolean sexo);
+	public void delateUsuario(String nombre, String apellido, Boolean sexo);
+	
+	public void getUsuarioPorNombre(String nombre);
+	public void getUsuarioByNombre(String nombre);
+	
+	
+
+}

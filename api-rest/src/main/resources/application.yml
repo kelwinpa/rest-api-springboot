@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: APIREST
+    
+server:  port: 9090
+    

@@ -1,0 +1,5 @@
+package com.api.apirest.repositorios;
+
+public interface UsuarioRepository {
+
+}

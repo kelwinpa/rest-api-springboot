@@ -1,0 +1,61 @@
+package com.api.apirest.servicios;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.apirest.interfaces.UsuarioInterfaz;
+import com.api.apirest.modelo.Usuario;
+import com.api.apirest.repositorios.UsuarioRepository;
+
+@Service
+public class UsurioServicio implements UsuarioInterfaz {
+
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	@Override
+	public Usuario crearUsuario(String nombre, String apellido, Boolean sexo) {
+
+		Usuario usuario = new Usuario(nombre, apellido, sexo);
+
+		usuarioRepository.save(usuario);
+
+		return usuario;
+	}
+
+	@Override
+	public void crearUsuario2(Usuario usuario) {
+
+		usuarioRepository.save(usuario);
+
+	}
+
+	@Override
+	public String updateUsuario(String nombre, String apellido, Boolean sexo) {
+		
+		
+		
+		
+	}
+
+	@Override
+	public String delateUsuario(String nombre, String apellido, Boolean sexo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario getUsuarioPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Usuario> getUsuarios(String nombre) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

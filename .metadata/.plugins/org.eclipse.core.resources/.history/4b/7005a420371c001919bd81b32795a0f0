@@ -1,0 +1,15 @@
+package com.api.apirest.modelo;
+
+
+public class Usuario {
+	
+	
+	private Long id;
+	private String name;
+	private String apellido;
+	private Boolean sexo;
+	
+	
+	
+
+}

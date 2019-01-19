@@ -1,0 +1,36 @@
+package com.api.apirest.controladores;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.api.apirest.modelo.Usuario;
+import com.api.apirest.servicios.UsuarioServicio;
+
+@RestController
+@RequestMapping("/usuario")
+public class usuarioControlador {
+
+	@Autowired
+	private UsuarioServicio usuarioServicio;
+
+	@PostMapping("/crearUsuario")
+	public void crearUsuario(Long id, @RequestParam String nombre, @RequestParam String apellido,
+			@RequestParam Boolean sexo) {
+
+		if (id != null) {
+
+			usuarioServicio.crearUsuario(nombre, apellido, sexo);
+
+		} else {
+
+			Usuario usuario = new Usuario(id, nombre, apellido, sexo);
+
+			usuarioServicio.crearUsuario2(usuario);
+		}
+
+	}
+
+}
